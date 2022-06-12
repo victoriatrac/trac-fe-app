@@ -17,4 +17,4 @@
 
 **6/11/22**
 - made first commit to github
-- 
+- added dotenv file to hide the api key

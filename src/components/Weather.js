@@ -25,7 +25,7 @@ function Weather() {
                 timeout: 5000
             }
 
-            const apiKey = "68c35da2d041a1516374e38422658492"
+            const apiKey = process.env.REACT_APP_WEATHER_API_KEY
 
             function success(pos) {
                 const lon = pos.coords.longitude
