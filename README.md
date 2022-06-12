@@ -14,3 +14,7 @@
 - created weather component that finds user's location and generates a basic UI of the weather
 - set up an axios spread to collect data from two APIs within OpenWeatherMap
 - added function to convert celcius to fahrenheit
+
+**6/11/22**
+- made first commit to github
+- 
