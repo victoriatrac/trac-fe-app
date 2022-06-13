@@ -18,3 +18,7 @@
 **6/11/22**
 - made first commit to github
 - added dotenv file to hide the api key
+
+**6/12/22**
+- changed layout of weather tile using flexbox
+- added basic gradient backgrounds for tile and app

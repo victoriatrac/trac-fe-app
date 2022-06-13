@@ -1,0 +1,110 @@
+.weatherContainer {
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-flow: row wrap;
+    /* align-items: center; */
+    justify-content: center;
+    align-content: center;
+    border-radius: 25px;
+    padding: .25rem;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+32,207cca+51,7db9e8+100 */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 32%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 32%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 32%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+  }
+
+  #icon-div {
+    flex: 50%;
+    text-align: center;
+    padding: 1rem;
+    /* background-color: brown; */
+    height: 70%;
+  }
+
+  #weather-icon {
+    /* border: 2px red solid; */
+    height: 80%;
+  }
+  
+  #weather-desc {
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    /* border: 2px red solid; */
+  }
+
+  #loc-desc-div {
+    flex: 50%;
+    height: 70%;
+    padding: 2rem .5rem 1rem .5rem;
+    /* border: 2px red solid; */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #f {
+    font-size: 280%;
+  }
+
+  #bottom-div {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .day {
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    /* border: green 2px solid; */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info-div {
+    height: 100%;
+    width: 50%;
+    /* border: green 2px solid; */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #location {
+    font-size: 200%;
+    font-weight: 800;
+    font-style: italic;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    /* border: 1px black  solid; */
+  }
+
+  #weather {
+    /* margin: 15px 0; */
+    /* height: 100%; */
+    font-size: 1.5rem;
+    /* border: 1px black solid; */
+    display: flex;
+    flex-flow: row nowrap;
+    /* justify-content: center; */
+    align-items: baseline;
+  }
+  
+  #circle {
+    /* background-color: black;
+    border-radius: 50px; */
+    height: 15px;
+    width: 15px;
+    margin: auto;
+  }
+  

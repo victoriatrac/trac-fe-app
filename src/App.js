@@ -1,9 +1,7 @@
-// import logo from "./logo.svg"
-// import Posts from "./components/Posts"
-import Weather from "./components/Weather"
-import "./App.css"
-
-console.log(process.env.REACT_APP_WEATHER_API_KEY)
+// import logo from './logo.svg'
+// import Posts from './components/Posts'
+import Weather from './components/Weather'
+import './App.css'
 
 function App() {
   return (
@@ -11,7 +9,7 @@ function App() {
 
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <h1>Victoria's App of Apps</h1>
+        {/* <h1>Victoria's App of Apps</h1> */}
       </header>
       {/* <Posts /> */}
       <Weather />
