@@ -29,3 +29,5 @@
 **6/14/22**
 - added custom weather icons for tile
 - cleaned up Weather.js, weather.css, App.js, App.css, index.css
+- tweaked padding
+- added filter to icon to make it white

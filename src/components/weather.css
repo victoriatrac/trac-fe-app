@@ -3,7 +3,6 @@
   width: 50vw;
   display: flex;
   flex-flow: row wrap;
-  /* align-items: center; */
   justify-content: center;
   align-content: center;
   border-radius: 25px;
@@ -31,6 +30,7 @@
 #weather-icon {
   height: 70%;
   margin-bottom: 1rem;
+  filter: invert(100%);
 }
 
 #weather-desc {
