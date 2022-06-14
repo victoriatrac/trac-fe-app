@@ -41,19 +41,16 @@ function Weather() {
           // .then(axios.spread((currentRes, futureRes) => {
           .then((currentRes) => {
 
-            // const currentWeather = currentRes.data
             const { weather, main, sys, name} = currentRes.data
             // const futureWeather = futureRes.data
 
             // console.log(`future Weather`)
             // console.log(futureWeather)
-
-            const temp = main
+            
+            const { temp, temp_min, temp_max } = main
             const place = name
             const { description } = weather[0]
             const { sunrise, sunset } = sys
-            const tempMin = main.temp_min
-            const tempMax = main.temp_max
 
             // const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`
             const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
@@ -68,8 +65,8 @@ function Weather() {
             desc.textContent = `${description}`;
             tempC.textContent = `${temp.toFixed(0)}°C`;
             tempF.textContent = `${ConvertCtoF(temp).toFixed(0)}°F`
-            max.textContent = `H: ${ConvertCtoF(tempMax).toFixed(0)}°F`
-            min.textContent = `L: ${ConvertCtoF(tempMin).toFixed(0)}°F`
+            max.textContent = `${ConvertCtoF(temp_max).toFixed(0)}°F`
+            min.textContent = `${ConvertCtoF(temp_min).toFixed(0)}°F`
             sunriseDOM.textContent = `${sunriseGMT.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
             sunsetDOM.textContent = `${sunsetGMT.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
           })
