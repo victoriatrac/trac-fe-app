@@ -14,7 +14,7 @@
   background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 32%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 32%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-
+  padding: 1rem;
 }
 
 #icon-div {
@@ -23,11 +23,16 @@
   padding: 1rem;
   /* background-color: brown; */
   height: 70%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 #weather-icon {
   /* border: 2px red solid; */
-  height: 80%;
+  height: 70%;
+  margin-bottom: 1rem;
 }
 
 #weather-desc {
@@ -39,7 +44,7 @@
 #loc-desc-div {
   flex: 50%;
   height: 70%;
-  padding: 2rem .5rem 1rem .5rem;
+  padding: 2rem 0rem 1rem 0rem;
   /* border: 2px red solid; */
   display: flex;
   flex-flow: column nowrap;
@@ -56,6 +61,7 @@
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  padding: 1rem 0rem 2rem 0rem;
 }
 
 .day {
