@@ -43,16 +43,12 @@ function Weather() {
 
             const { weather, main, sys, name} = currentRes.data
             // const futureWeather = futureRes.data
-
-            // console.log(`future Weather`)
-            // console.log(futureWeather)
             
             const { temp, temp_min, temp_max } = main
             const place = name
             const { description } = weather[0]
             const { sunrise, sunset } = sys
 
-            // const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`
             const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
               weather[0]["icon"]
             }.svg`
@@ -60,7 +56,7 @@ function Weather() {
             const sunriseGMT = new Date(sunrise * 1000)
             const sunsetGMT = new Date(sunset * 1000)
 
-            iconImg.src = iconUrl;
+            iconImg.src = `${iconUrl}`;
             loc.textContent = `${place}`;
             desc.textContent = `${description}`;
             tempC.textContent = `${temp.toFixed(0)}°C`;
@@ -84,7 +80,7 @@ function Weather() {
   return (
     <div className="weatherContainer">
       <div id="icon-div">
-        <img src="${icon}" alt="weather-icon" id="weather-icon" />
+        <img src="" alt="weather-icon" id="weather-icon" />
         <p id="weather-desc">No information available</p>
       </div>
       <div id="loc-desc-div">
@@ -97,8 +93,6 @@ function Weather() {
       </div>
       <div id="bottom-div">
         <div className="day">
-          {/* <div className="min">Error</div>
-          <div className="max">Error</div> */}
           <h4>High temp: <span className="min">Error</span></h4>
           <h4>Low temp: <span className="max">Error</span></h4>
         </div>

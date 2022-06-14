@@ -21,7 +21,6 @@
   flex: 50%;
   text-align: center;
   padding: 1rem;
-  /* background-color: brown; */
   height: 70%;
   display: flex;
   flex-flow: column wrap;
@@ -30,7 +29,6 @@
 }
 
 #weather-icon {
-  /* border: 2px red solid; */
   height: 70%;
   margin-bottom: 1rem;
 }
@@ -38,14 +36,12 @@
 #weather-desc {
   font-size: 1.25rem;
   text-transform: capitalize;
-  /* border: 2px red solid; */
 }
 
 #loc-desc-div {
   flex: 50%;
   height: 70%;
   padding: 2rem 0rem 1rem 0rem;
-  /* border: 2px red solid; */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -68,7 +64,6 @@
   height: 100%;
   width: 50%;
   text-align: center;
-  /* border: green 2px solid; */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -78,7 +73,6 @@
 .info-div {
   height: 100%;
   width: 50%;
-  /* border: green 2px solid; */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -89,27 +83,13 @@
   font-size: 200%;
   font-weight: 800;
   font-style: italic;
-  /* width: 100%; */
   display: flex;
   justify-content: center;
-  /* border: 1px black  solid; */
 }
 
 #weather {
-  /* margin: 15px 0; */
-  /* height: 100%; */
   font-size: 1.5rem;
-  /* border: 1px black solid; */
   display: flex;
   flex-flow: row nowrap;
-  /* justify-content: center; */
   align-items: baseline;
-}
-
-#circle {
-  /* background-color: black;
-  border-radius: 50px; */
-  height: 15px;
-  width: 15px;
-  margin: auto;
 }
