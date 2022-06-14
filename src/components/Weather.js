@@ -16,11 +16,11 @@ function Weather() {
       const loc = document.querySelector('#location')
       const tempC = document.querySelector('#c')
       const tempF = document.querySelector('#f')
-      const min = document.querySelector('.min')
-      const max = document.querySelector('.max')
+      const min = document.querySelector('#min')
+      const max = document.querySelector('#max')
       const desc = document.querySelector('#weather-desc')
-      const sunriseDOM = document.querySelector('.sunrise')
-      const sunsetDOM = document.querySelector('.sunset')
+      const sunriseDOM = document.querySelector('#sunrise')
+      const sunsetDOM = document.querySelector('#sunset')
 
       const options = {
         timeout: 5000
@@ -92,12 +92,12 @@ function Weather() {
       </div>
       <div id="bottom-div">
         <div className="day">
-          <h4>High temp: <span className="min">Error</span></h4>
-          <h4>Low temp: <span className="max">Error</span></h4>
+          <h4>High temp: <span id="min">Error</span></h4>
+          <h4>Low temp: <span id="max">Error</span></h4>
         </div>
         <div className="info-div">
-          <h4>Sunrise: <span className="sunrise">No info</span></h4>
-          <h4>Sunset: <span className="sunset">No info</span></h4>
+          <h4>Sunrise: <span id="sunrise">No info</span></h4>
+          <h4>Sunset: <span id="sunset">No info</span></h4>
         </div>
       </div>
     </div>

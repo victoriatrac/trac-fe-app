@@ -27,7 +27,7 @@
 
 #weather-icon {
   height: 70%;
-  filter: invert(100%);
+  filter: invert(99%) sepia(98%) saturate(353%) hue-rotate(310deg) brightness(104%) contrast(80%);
 }
 
 #weather-desc {
@@ -53,6 +53,11 @@
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  font-size: 120%;
+}
+
+#bottom-div h4 {
+  font-weight: 400;
 }
 
 .day {
