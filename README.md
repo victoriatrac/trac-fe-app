@@ -22,3 +22,10 @@
 **6/12/22**
 - changed layout of weather tile using flexbox
 - added basic gradient backgrounds for tile and app
+
+**6/13/22**
+- added new font for weather tile
+
+**6/14/22**
+- added custom weather icons for tile
+- cleaned up Weather.js, weather.css, App.js, App.css, index.css
