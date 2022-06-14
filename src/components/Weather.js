@@ -86,7 +86,6 @@ function Weather() {
       <div id="loc-desc-div">
         <div id="weather">
           <div id="f">Error</div>
-          <div id="circle"></div>
           <div id="c">Error</div>
         </div>
         <div id="location">Fetching weather failed</div>
