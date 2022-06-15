@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 // import axios from 'axios'
-import './tasks.css'
-import './components.css'
 
 import TaskForm from './TaskForm'
 import Task from './Task'
+import './components.css'
+import './tasks.css'
 
 import axios from '../fakeaxios'
 
@@ -35,17 +35,27 @@ function Tasks() {
 
   return (
     <div className="container-tile">
-      <div>
-        <h3>To Do</h3>
-        <TaskForm form={form} update={update} submit={submit} />
-        
-        {
-          tasks.map(task => {
-            return (
-              <Task id={task.id} items={task}/>
-            )
-          })
-        }
+      <div className="task-form-container">
+        <h1>To Do</h1>
+        <div>
+          {
+            tasks.map(task => {
+              return (
+                <Task
+                  id={task.id}
+                  items={task}
+                />
+              )
+            })
+          }
+        </div>
+        <div>
+          <TaskForm
+            form={form}
+            update={update}
+            submit={submit}
+          />
+        </div>     
       </div>
     </div>
   )

@@ -36,3 +36,5 @@
 - uploaded to vercel after fixing package issues
 - created new css file for shared attributes
 - organized codeblocks in existing files
+- created basic task application with form and fake axios calls
+- 

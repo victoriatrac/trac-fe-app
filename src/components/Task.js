@@ -1,4 +1,5 @@
 import React from 'react'
+import './tasks.css'
 
 function Task(props) {
   const { items } = props
@@ -9,7 +10,7 @@ function Task(props) {
 
   return (
     <div className="task-div">
-      <h2>{items.task}</h2>
+      <p>{items.task}</p>
     </div>
   )
 }
