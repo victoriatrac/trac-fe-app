@@ -1,8 +1,12 @@
 import React from 'react'
 import axios from 'axios'
+
 import './components.css'
 import './weather.css'
 
+import arrow from '../images/arrow-up.svg'
+
+// helper function for temp conversion
 function ConvertCtoF(celcius) {
   const fahrenheit = (celcius * 9) / 5 + 32
   return fahrenheit
@@ -10,13 +14,12 @@ function ConvertCtoF(celcius) {
 
 function Weather() {
   window.addEventListener('load', () => {
-      console.log("loaded")
     if (navigator.geolocation) {
     
       const iconImg = document.getElementById('weather-icon')
       const loc = document.querySelector('#location')
-      const tempC = document.querySelector('#c')
       const tempF = document.querySelector('#f')
+      const feelsLike = document.querySelector('#feels')
       const min = document.querySelector('#min')
       const max = document.querySelector('#max')
       const desc = document.querySelector('#weather-desc')
@@ -45,7 +48,7 @@ function Weather() {
             const { weather, main, sys, name} = currentRes.data
             // const futureWeather = futureRes.data
             
-            const { temp, temp_min, temp_max } = main
+            const { temp, feels_like, temp_min, temp_max } = main
             const place = name
             const { description } = weather[0]
             const { sunrise, sunset } = sys
@@ -60,12 +63,12 @@ function Weather() {
             iconImg.src = `${iconUrl}`;
             loc.textContent = `${place}`;
             desc.textContent = `${description}`;
-            tempC.textContent = `${temp.toFixed(0)}°C`;
             tempF.textContent = `${ConvertCtoF(temp).toFixed(0)}°F`
+            feelsLike.textContent = `Feels like ${ConvertCtoF(feels_like).toFixed(0)}°F`
             max.textContent = `${ConvertCtoF(temp_max).toFixed(0)}°F`
             min.textContent = `${ConvertCtoF(temp_min).toFixed(0)}°F`
-            sunriseDOM.textContent = `${sunriseGMT.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
-            sunsetDOM.textContent = `${sunsetGMT.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+            sunriseDOM.textContent = `${sunriseGMT.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'})}`;
+            sunsetDOM.textContent = `${sunsetGMT.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'})}`;
           })
       }
 
@@ -80,23 +83,31 @@ function Weather() {
 
   return (
     <div className="container-tile">
-      <div id="icon-div">
-        <img src="" alt="weather-icon" id="weather-icon" />
-        <p id="weather-desc">No information available</p>
-      </div>
-      <div id="loc-desc-div">
-        <div id="weather">
-          <div id="f">Error</div>
-          <div id="c">Error</div>
+      <div id="top-div">
+        <div id="icon-div">
+          <img src="" alt="weather-icon" id="weather-icon" />
+          <p id="weather-desc">No information available</p>
         </div>
-        <div id="location">Fetching weather failed</div>
+        <div id="loc-desc-div">
+          <div id="temp">
+            <div id="f">Error</div>
+            <div id="feels">Error</div>
+          </div>
+          <div id="location">Fetching weather failed</div>
+        </div>
       </div>
       <div id="bottom-div">
-        <div className="day">
-          <h4>High temp: <span id="min">Error</span></h4>
-          <h4>Low temp: <span id="max">Error</span></h4>
+        <div className="bottom-div-div">
+          <div className="expected-temps-div">
+            <img src={arrow} id="arrow-icon" className="arrow-up"/>
+            <span id="min">Error</span>
+          </div>
+          <div className="expected-temps-div">
+            <img src={arrow} id="arrow-icon" className="arrow-down"/>
+            <span id="max">Error</span>
+          </div>
         </div>
-        <div className="info-div">
+        <div className="bottom-div-div">
           <h4>Sunrise: <span id="sunrise">No info</span></h4>
           <h4>Sunset: <span id="sunset">No info</span></h4>
         </div>
