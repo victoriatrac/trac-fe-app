@@ -34,29 +34,29 @@ function Tasks() {
   console.log(tasks)
 
   return (
-    <div className="container-tile">
-      <div className="task-form-container">
-        <h1>To Do</h1>
-        <div>
-          {
-            tasks.map(task => {
-              return (
-                <Task
-                  id={task.id}
-                  items={task}
-                />
-              )
-            })
-          }
-        </div>
-        <div>
-          <TaskForm
-            form={form}
-            update={update}
-            submit={submit}
-          />
-        </div>     
+    <div className="container-tile" id="task-tile">
+      <div id="task-top-div">
+        <h1 id="task-header">To Do</h1>
       </div>
+      <div id="tasks-div">
+        {
+          tasks.map(task => {
+            return (
+              <Task
+                id={task.id}
+                items={task}
+              />
+            )
+          })
+        }
+        </div>
+        <div id="task-bottom-div">
+        <TaskForm
+          form={form}
+          update={update}
+          submit={submit}
+        />
+      </div>     
     </div>
   )
 }

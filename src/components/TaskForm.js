@@ -1,4 +1,5 @@
 import React from 'react'
+import './tasks.css'
 
 function TaskForm(props) {
   const { form, update, submit } = props
@@ -14,11 +15,12 @@ function TaskForm(props) {
   }
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <div className="form-inputs">
-        <label>
-          Task
+    <form className="task-form-container" onSubmit={handleSubmit}>
+      <div className="task-form-inputs">
+        <label
+          for="task">
           <input
+            id="task"
             type="text"
             name="task"
             placeholder="add a task"
@@ -26,9 +28,9 @@ function TaskForm(props) {
             onChange={handleChange}
           />
         </label>
-      </div>
-      <div className="submit">
-        <button>Submit</button>
+        <div id="task-submit">
+          <button>Submit</button>
+        </div>
       </div>
     </form>
   )

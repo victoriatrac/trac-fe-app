@@ -1,9 +1,9 @@
 {
   "tasks": [
     {
+      "id": 0,
       "task": "Walk the dog",
-      "checked": false,
-      "id": 0
+      "checked": false
     },
     {
       "id": 1

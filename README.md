@@ -37,4 +37,7 @@
 - created new css file for shared attributes
 - organized codeblocks in existing files
 - created basic task application with form and fake axios calls
-- 
+
+**6/15/22**
+- tweaked layout of form
+- adapted css from other component, renamed identifiers
