@@ -35,3 +35,4 @@
 - created placeholder components
 - uploaded to vercel after fixing package issues
 - created new css file for shared attributes
+- organized codeblocks in existing files

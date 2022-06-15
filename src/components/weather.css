@@ -1,19 +1,13 @@
-/* .weatherContainer {
-  height: 50vh;
-  width: 50vw;
+#top-div {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: center;
-  border-radius: 25px;
-  padding: 1rem;
-  background: #1e5799; 
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+  height: 70%;
+  width: 100%;
+  flex-flow: row;
+}
 
 #icon-div {
   flex: 50%;
   text-align: center;
-  height: 70%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -26,69 +20,86 @@
 }
 
 #weather-desc {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
 #loc-desc-div {
   flex: 50%;
-  height: 70%;
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#temp {
+  display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
 }
 
 #f {
-  font-size: 280%;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+#feels {
+  font-size: 1.2rem;
+}
+
+#location {
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
 #bottom-div {
+  font-size: 120%;
   height: 30%;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  font-size: 120%;
 }
 
 #bottom-div h4 {
   font-weight: 400;
 }
 
-.day {
-  height: 100%;
+.bottom-div-div {
   width: 50%;
-  text-align: center;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  row-gap: 10%;
-}
-
-.info-div {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  row-gap: 10%;
-}
-
-#location {
-  font-size: 200%;
-  font-weight: 800;
-  font-style: italic;
-  display: flex;
-  justify-content: center;
-}
-
-#weather {
   font-size: 1.5rem;
-  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10%;
+}
+
+.expected-temps-div {
+  font-weight: 500;
   display: flex;
   flex-flow: row nowrap;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-around;
+  column-gap: 1rem;
+}
+
+#arrow-icon {
+  height: 1.5rem;
+  transform-origin: center;
+}
+
+.arrow-up {
+  filter: invert(22%) sepia(94%) saturate(6896%) hue-rotate(1deg) brightness(97%) contrast(122%);
+}
+
+.arrow-down {
+  filter: invert(13%) sepia(100%) saturate(5083%) hue-rotate(239deg) brightness(84%) contrast(138%);
+  transform: scale(1, -1);
 }
