@@ -6,7 +6,7 @@ import './components.css'
 function Mock2() {
 
   return (
-    <div className="container">
+    <div className="container-tile">
         <p>poop</p>
     </div>
   )

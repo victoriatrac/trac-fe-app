@@ -79,7 +79,7 @@ function Weather() {
   })
 
   return (
-    <div className="container">
+    <div className="container-tile">
       <div id="icon-div">
         <img src="" alt="weather-icon" id="weather-icon" />
         <p id="weather-desc">No information available</p>
