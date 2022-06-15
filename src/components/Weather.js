@@ -10,7 +10,7 @@ function ConvertCtoF(celcius) {
 
 function Weather() {
   window.addEventListener('load', () => {
-      
+      console.log("loaded")
     if (navigator.geolocation) {
     
       const iconImg = document.getElementById('weather-icon')
