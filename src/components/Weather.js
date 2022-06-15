@@ -99,11 +99,11 @@ function Weather() {
       <div id="bottom-div">
         <div className="bottom-div-div">
           <div className="expected-temps-div">
-            <img src={arrow} id="arrow-icon" className="arrow-up"/>
+            <img src={arrow} alt="up-arrow" id="arrow-icon" className="arrow-up"/>
             <span id="min">Error</span>
           </div>
           <div className="expected-temps-div">
-            <img src={arrow} id="arrow-icon" className="arrow-down"/>
+            <img src={arrow} alt="down-arrow" id="arrow-icon" className="arrow-down"/>
             <span id="max">Error</span>
           </div>
         </div>
