@@ -31,3 +31,7 @@
 - cleaned up Weather.js, weather.css, App.js, App.css, index.css
 - tweaked padding
 - added filter to icon to make it white
+- made changes to font, minor layout tweaks
+- created placeholder components
+- uploaded to vercel after fixing package issues
+- created new css file for shared attributes
