@@ -1,6 +1,7 @@
-import './App.css'
 import Weather from './components/Weather'
 import Mock2 from './components/Mock2'
+import './App.css'
+import React from 'react'
 
 function App() {
   return (
