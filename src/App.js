@@ -8,6 +8,8 @@ function App() {
     <div className="App">
       <Weather />
       <Mock2 />
+      <Mock2 />
+      <Mock2 />
     </div>
   );
 }

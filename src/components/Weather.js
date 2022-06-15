@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import './components.css'
 import './weather.css'
 
 function ConvertCtoF(celcius) {
@@ -78,7 +79,7 @@ function Weather() {
   })
 
   return (
-    <div className="weatherContainer">
+    <div className="container">
       <div id="icon-div">
         <img src="" alt="weather-icon" id="weather-icon" />
         <p id="weather-desc">No information available</p>
