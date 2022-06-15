@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import './tasks.css'
 import './components.css'
 
 import TaskForm from './TaskForm'
+import Task from './Task'
+
+import axios from '../fakeaxios'
 
 const initialForm = {
+  id: Date.now(),
   task: "",
   checked: false
 }
@@ -24,13 +28,25 @@ function Tasks() {
   }
 
   useEffect(() => {
-    setTasks(res.data)
+    axios.get('http://fakeapi.com').then(res => setTasks(res.data))
   }, [])
+
+  console.log(tasks)
 
   return (
     <div className="container-tile">
-      <h3>To Do</h3>
-      <TaskForm form={form} update={update} submit={submit} />
+      <div>
+        <h3>To Do</h3>
+        <TaskForm form={form} update={update} submit={submit} />
+        
+        {
+          tasks.map(task => {
+            return (
+              <Task id={task.id} items={task}/>
+            )
+          })
+        }
+      </div>
     </div>
   )
 }
