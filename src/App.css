@@ -9,6 +9,8 @@
   background: linear-gradient(to bottom, #193759 0%,#1c3d66 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#193759', endColorstr='#1c3d66',GradientType=0 ); /* IE6-9 */
   /* padding: 1rem; */
+  display: flex;
+  flex-flow: row wrap;
 }
 
 /* .App-header {
