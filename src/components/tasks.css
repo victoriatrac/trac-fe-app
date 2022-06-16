@@ -82,8 +82,15 @@ button {
   padding: .25rem;
   font-size: 1rem;
   font-weight: 500;
+  border-radius: 40px;
 }
 
-/* #task-div {
+/*
 
-} */
+Task.js
+
+*/
+
+.task-div {
+  padding-top: 1rem;
+}
