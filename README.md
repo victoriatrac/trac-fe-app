@@ -43,3 +43,5 @@
 - adapted css from other component, renamed identifiers
 - further changes to task list layout
 - added third placeholder component
+- made small layout tweaks to components
+- added ability to check off items on task list
