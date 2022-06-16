@@ -7,12 +7,13 @@ function Task(props) {
   if (!items) {
     return <p>No tasks to show</p>
   }
-
-  return (
-    <div className="task-div">
-      <p>{items.task}</p>
-    </div>
-  )
+  else {
+    return (
+      <div className="task-div">
+        <p>{items.task}</p>
+      </div>
+    )
+  }
 }
 
 export default Task

@@ -14,6 +14,10 @@ const initialForm = {
   checked: false
 }
 
+// function checkOff(completed) {
+//   console.log(completed)
+// }
+
 function Tasks() {
   const [ tasks, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
@@ -28,10 +32,12 @@ function Tasks() {
   }
 
   useEffect(() => {
-    axios.get('http://fakeapi.com').then(res => setTasks(res.data))
+    axios
+      .get('http://localhost:1234/tasks')
+      .then(res => setTasks(res.data))
   }, [])
 
-  console.log(tasks)
+  console.log('tasks', tasks)
 
   return (
     <div className="container-tile" id="task-tile">
@@ -43,10 +49,12 @@ function Tasks() {
           {
             tasks.map(task => {
               return (
-                <li><Task
-                  id={task.id}
-                  items={task}
-                /></li>
+                <li>
+                  <Task
+                    id={task.id}
+                    items={task}
+                  />
+                </li>
               )
             })
           }
