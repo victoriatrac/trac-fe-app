@@ -1,10 +1,4 @@
-const initialTaskList = [
-  {
-    id: "",
-    task: "",
-    checked: false
-  },
-]
+const initialTaskList = []
 
 export default {
   get() {
