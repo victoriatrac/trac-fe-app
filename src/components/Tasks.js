@@ -36,21 +36,23 @@ function Tasks() {
   return (
     <div className="container-tile" id="task-tile">
       <div id="task-top-div">
-        <h1 id="task-header">To Do</h1>
+        <span id="task-header">To Do</span>
       </div>
       <div id="tasks-div">
-        {
-          tasks.map(task => {
-            return (
-              <Task
-                id={task.id}
-                items={task}
-              />
-            )
-          })
-        }
-        </div>
-        <div id="task-bottom-div">
+        <ul>
+          {
+            tasks.map(task => {
+              return (
+                <li><Task
+                  id={task.id}
+                  items={task}
+                /></li>
+              )
+            })
+          }
+      </ul>
+      </div>
+      <div id="task-bottom-div">
         <TaskForm
           form={form}
           update={update}

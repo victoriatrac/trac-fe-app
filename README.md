@@ -41,3 +41,4 @@
 **6/15/22**
 - tweaked layout of form
 - adapted css from other component, renamed identifiers
+- further changes to task list layout

@@ -17,18 +17,20 @@ Tasks.js
 }
 
 #task-header {
-  width: 50%;
+  width: 100%;
   text-align: center;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-content: center;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 #tasks-div {
   height: 60%;
   width: 100%;
-  background-color: brown;
+  border: solid rgb(230, 226, 208) 1px;
+}
+
+ul {
+  padding-left: 2.5rem;
 }
 
 #task-bottom-div {
@@ -61,15 +63,25 @@ label {
 }
 
 input[type=text] {
-  /* height: 1200%; */
-  /* flex: 90; */
-  width: 100%;
-  /* margin-left: ; */
+  width: 95%;
+  font-size: 1rem;
+  padding: .25rem;
+  border: solid rgb(230, 226, 208) 1px;
 }
 
 #task-submit {
   /* flex: 10; */
-  width: 10%;
+  width: 20%;
+}
+
+button {
+  width: 100%;
+  background-color: transparent;
+  color:rgb(230, 226, 208);
+  border: solid rgb(230, 226, 208) 1px;
+  padding: .25rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /* #task-div {
