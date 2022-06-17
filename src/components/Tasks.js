@@ -6,7 +6,6 @@ import Task from './Task'
 import './components.css'
 import './tasks.css'
 
-import axios from '../fakeaxios'
 
 const initialForm = {
   id: Date.now(),
@@ -18,6 +17,20 @@ function Tasks() {
   const [ tasks, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
 
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:1234/tasks`)
+  //     // .get(`https://fakeapi.com`)
+  //     .then(res => {
+  //       console.log(res.data[0])
+  //       // setTasks(res.data[0])
+  //       console.log('tasks', tasks)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // }, [])
+
   const update = (name, value) => {
     setForm({...form, [name]: value})
   }
@@ -27,12 +40,6 @@ function Tasks() {
     setForm(initialForm)
   }
 
-  useEffect(() => {
-    axios.get('http://fakeapi.com').then(res => setTasks(res.data))
-  }, [])
-
-  console.log(tasks)
-
   return (
     <div className="container-tile" id="task-tile">
       <div id="task-top-div">
@@ -41,14 +48,17 @@ function Tasks() {
       <div id="tasks-div">
         <ul>
           {
+            ( tasks.length === 0 ? "no tasks to display" :
             tasks.map(task => {
               return (
-                <li><Task
-                  id={task.id}
-                  items={task}
-                /></li>
+                <li>
+                  <Task
+                    id={task.id}
+                    items={task}
+                  />
+                </li>
               )
-            })
+            }))
           }
       </ul>
       </div>
