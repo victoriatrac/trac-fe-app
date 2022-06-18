@@ -43,3 +43,9 @@
 - adapted css from other component, renamed identifiers
 - further changes to task list layout
 - added third placeholder component
+
+**6/17/22**
+- added functionality to task list for:
+-- toggling completed state for items
+-- striking through completed items
+-- removing completed items
