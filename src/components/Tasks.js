@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 
 import TaskForm from './TaskForm'
 import Task from './Task'
@@ -17,19 +17,18 @@ function Tasks() {
   const [ tasks, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:1234/tasks`)
-  //     // .get(`https://fakeapi.com`)
-  //     .then(res => {
-  //       console.log(res.data[0])
-  //       // setTasks(res.data[0])
-  //       console.log('tasks', tasks)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }, [])
+  useEffect(() => {
+    axios
+      .get(`http://localhost:1234/tasks`)
+      // .get(`https://fakeapi.com`)
+      .then(res => {
+        console.log(res.data)
+        setTasks([...tasks, ...res.data])
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
 
   const update = (name, value) => {
     setForm({...form, [name]: value})
