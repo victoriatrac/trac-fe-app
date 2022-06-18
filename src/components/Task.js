@@ -10,7 +10,7 @@ function Task(props) {
 
   return (
     <div className="task-div">
-      <p>{items.task}</p>
+      <p className={items.checked ? "done" : ""}>{items.task}</p>
     </div>
   )
 }

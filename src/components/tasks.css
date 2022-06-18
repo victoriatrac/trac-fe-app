@@ -94,3 +94,7 @@ Task.js
 .task-div {
   padding-top: 1rem;
 }
+
+.done {
+  text-decoration: line-through;
+}
