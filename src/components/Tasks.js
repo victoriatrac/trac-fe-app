@@ -14,7 +14,7 @@ const initialForm = {
 }
 
 function Tasks() {
-  const [ tasks, setTasks ] = useState([])
+  const [ taskList, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
 
   useEffect(() => {
@@ -23,19 +23,28 @@ function Tasks() {
       // .get(`https://fakeapi.com`)
       .then(res => {
         console.log(res.data)
-        setTasks([...tasks, ...res.data])
+        setTasks([...taskList, ...res.data])
       })
       .catch(err => {
         console.log(err)
       })
-  }, [])
+  }, []) 
 
-  const update = (name, value) => {
+  const handleChange = (name, value) => {
     setForm({...form, [name]: value})
   }
 
-  const submit = () => {
-    setTasks([...tasks, form])
+  const handleToggle = (id) => {
+    console.log('toggle triggered id:', id)
+    let mapped = taskList.map(task => {
+      return task.id === id ? { ...task, checked: !task.checked } : { ...task }
+    })
+    setTasks(mapped)
+    console.log(taskList)
+  }
+
+  const handleSubmit = () => {
+    setTasks([...taskList, form])
     setForm(initialForm)
   }
 
@@ -47,13 +56,14 @@ function Tasks() {
       <div id="tasks-div">
         <ul>
           {
-            ( tasks.length === 0 ? "no tasks to display" :
-            tasks.map(task => {
+            ( taskList.length === 0 ? "no tasks to display" :
+            taskList.map(task => {
               return (
                 <li>
                   <Task
                     id={task.id}
                     items={task}
+                    handleToggle={handleToggle}
                   />
                 </li>
               )
@@ -64,8 +74,8 @@ function Tasks() {
       <div id="task-bottom-div">
         <TaskForm
           form={form}
-          update={update}
-          submit={submit}
+          update={handleChange}
+          submit={handleSubmit}
         />
       </div>     
     </div>
