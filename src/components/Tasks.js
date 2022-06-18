@@ -35,12 +35,17 @@ function Tasks() {
   }
 
   const handleToggle = (id) => {
-    console.log('toggle triggered id:', id)
     let mapped = taskList.map(task => {
       return task.id === id ? { ...task, checked: !task.checked } : { ...task }
     })
     setTasks(mapped)
-    console.log(taskList)
+  }
+
+  const handleFilter = () => {
+    let filtered = taskList.filter(task => {
+      return !task.checked
+    })
+    setTasks(filtered)
   }
 
   const handleSubmit = () => {
@@ -77,6 +82,7 @@ function Tasks() {
           update={handleChange}
           submit={handleSubmit}
         />
+        <button onClick={handleFilter}>X</button>
       </div>     
     </div>
   )
