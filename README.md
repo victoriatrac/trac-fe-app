@@ -43,5 +43,14 @@
 - adapted css from other component, renamed identifiers
 - further changes to task list layout
 - added third placeholder component
-- made small layout tweaks to components
-- added ability to check off items on task list
+
+**6/17/22**
+- added functionality to task list for:
+-- toggling completed state for items
+-- striking through completed items
+-- removing completed items
+
+
+## Known bugs
+[ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.
+[ ] Tasklist: new items are created with the same ID due to Date.now() running only once. Causes new items to be treated as one.
