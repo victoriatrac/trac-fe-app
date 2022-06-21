@@ -12,12 +12,13 @@ function Task(props) {
   if (!items) {
     return <p>No tasks to show</p>
   }
-
-  return (
-    <div className="task-div">
+  else {
+    return (
+      <div className="task-div">
       <p onClick={markDone} className={items.checked ? "done" : ""}>{items.task}</p>
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default Task
