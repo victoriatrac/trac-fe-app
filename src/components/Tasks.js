@@ -14,10 +14,6 @@ const initialForm = {
   checked: false
 }
 
-// function checkOff(completed) {
-//   console.log(completed)
-// }
-
 function Tasks() {
   const [ taskList, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
@@ -56,7 +52,7 @@ function Tasks() {
 
   const handleSubmit = () => {
     setTasks([...taskList, form])
-    setForm(initialForm)
+    setForm({...initialForm, id: uuid()})
   }
 
   return (
@@ -72,6 +68,7 @@ function Tasks() {
               return (
                 <li>
                   <Task
+                    key={uuid()}
                     id={task.id}
                     items={task}
                     handleToggle={handleToggle}
