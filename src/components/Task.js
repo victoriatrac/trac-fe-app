@@ -2,20 +2,20 @@ import React from 'react'
 import './tasks.css'
 
 function Task(props) {
-  const { id, items, handleToggle } = props
+  const { id, item, handleToggle } = props
 
   const markDone = (e) => {
     e.preventDefault()
     handleToggle(id)
   }
   
-  if (!items) {
+  if (!item) {
     return <p>No tasks to show</p>
   }
   else {
     return (
       <div className="task-div">
-      <p onClick={markDone} className={items.checked ? "done" : ""}>{items.task}</p>
+      <p onClick={markDone} className={item.checked ? "done" : ""}>{item.task}</p>
       </div>
     )
   }
