@@ -13,6 +13,10 @@ const initialForm = {
   checked: false
 }
 
+// function checkOff(completed) {
+//   console.log(completed)
+// }
+
 function Tasks() {
   const [ taskList, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
