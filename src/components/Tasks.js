@@ -68,9 +68,9 @@ function Tasks() {
               return (
                 <li>
                   <Task
-                    key={uuid()}
+                    key={task.task}
                     id={task.id}
-                    items={task}
+                    item={task}
                     handleToggle={handleToggle}
                   />
                 </li>
