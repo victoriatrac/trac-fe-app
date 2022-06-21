@@ -39,6 +39,7 @@ function Tasks() {
       return task.id === id ? { ...task, checked: !task.checked } : { ...task }
     })
     setTasks(mapped)
+    console.log("mapped", taskList)
   }
 
   const handleFilter = () => {
@@ -82,8 +83,8 @@ function Tasks() {
           update={handleChange}
           submit={handleSubmit}
         />
-        <button onClick={handleFilter}>X</button>
       </div>     
+      <button onClick={handleFilter}>X</button>
     </div>
   )
 }
