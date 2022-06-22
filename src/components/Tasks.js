@@ -86,7 +86,7 @@ function Tasks() {
           submit={handleSubmit}
         />
       </div>     
-      <button onClick={handleFilter}>X</button>
+      <button className="task-button" onClick={handleFilter}>X</button>
     </div>
   )
 }
