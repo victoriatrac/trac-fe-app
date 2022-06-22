@@ -1,9 +1,9 @@
 import React from 'react'
 // import axios from 'axios'
-import './mock2.css'
+import './news.css'
 import './components.css'
 
-function Mock2() {
+function News() {
 
   return (
     <div className="container-tile">
@@ -12,4 +12,4 @@ function Mock2() {
   )
 }
 
-export default Mock2
+export default News

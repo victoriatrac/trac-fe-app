@@ -50,7 +50,13 @@
 -- striking through completed items
 -- removing completed items
 
+**6/21/22**
+- fixed ID bug in task app
+
+**6/22/22**
+- started news app for final tile
+
 
 ## Known bugs
 [ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.
-[ ] Tasklist: new items are created with the same ID due to Date.now() running only once. Causes new items to be treated as one.
+[X] Tasklist: new items are created with the same ID due to Date.now() running only once. Causes new items to be treated as one.
