@@ -55,7 +55,8 @@
 
 **6/22/22**
 - started news app for final tile
-
+- implemented axios call using mock API for now to save limited API calls for news site
+- added pagination to news app
 
 ## Known bugs
 [ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.

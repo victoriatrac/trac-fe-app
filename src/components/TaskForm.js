@@ -29,7 +29,7 @@ function TaskForm(props) {
           />
         </label>
         <div id="task-submit">
-          <button>Submit</button>
+          <button className="task-button">Submit</button>
         </div>
       </div>
     </form>

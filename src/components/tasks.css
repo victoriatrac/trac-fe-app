@@ -74,7 +74,7 @@ input[type=text] {
   width: 20%;
 }
 
-button {
+.task-button {
   width: 100%;
   background-color: transparent;
   color:rgb(230, 226, 208);
