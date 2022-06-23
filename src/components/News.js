@@ -50,7 +50,7 @@ function News() {
   if (error) return <h3>{error}</h3>
 
   return (
-    <div class="container-tile">
+    <div class="tile-container">
       <div id="news-container">
 
         {news.length > 0 ? (

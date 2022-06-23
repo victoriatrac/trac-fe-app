@@ -56,7 +56,7 @@ function Tasks() {
   }
 
   return (
-    <div class="container-tile">
+    <div class="tile-container">
       <div id="task-tile">
         <div id="task-top-div">
           <span id="task-header">To Do</span>
@@ -86,7 +86,7 @@ function Tasks() {
             update={handleChange}
             submit={handleSubmit}
           />
-          <button class="task-button-2" onClick={handleFilter}>X</button>
+          <button class="task-clear-button" onClick={handleFilter}>X</button>
         </div>
       </div>
     </div>

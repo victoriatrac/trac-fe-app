@@ -16,15 +16,15 @@ function Weather() {
   window.addEventListener('load', () => {
     if (navigator.geolocation) {
     
-      const iconImg = document.getElementById('weather-icon')
-      const loc = document.querySelector('#location')
-      const tempF = document.querySelector('#f')
-      const feelsLike = document.querySelector('#feels')
-      const min = document.querySelector('#min')
-      const max = document.querySelector('#max')
+      const iconImg = document.getElementById('weather-icon-img')
+      const loc = document.querySelector('#weather-location')
+      const tempF = document.querySelector('#weather-f')
+      const feelsLike = document.querySelector('#weather-feels')
+      const min = document.querySelector('#weather-min')
+      const max = document.querySelector('#weather-max')
       const desc = document.querySelector('#weather-desc')
-      const sunriseDOM = document.querySelector('#sunrise')
-      const sunsetDOM = document.querySelector('#sunset')
+      const sunriseDOM = document.querySelector('#weather-sunrise')
+      const sunsetDOM = document.querySelector('#weather-sunset')
 
       const options = {
         timeout: 5000
@@ -82,34 +82,36 @@ function Weather() {
   })
 
   return (
-    <div class="container-tile">
-      <div id="top-div">
-        <div id="icon-div">
-          <img src="" alt="weather-icon" id="weather-icon" />
-          <p id="weather-desc">No information available</p>
-        </div>
-        <div id="loc-desc-div">
-          <div id="temp">
-            <div id="f">Error</div>
-            <div id="feels">Error</div>
+    <div class="tile-container">
+      <div id="weather-tile">
+        <div id="weather-top-div">
+          <div id="weather-icon-div">
+            <img src="" alt="weather-icon" id="weather-icon-img" />
+            <p id="weather-desc">No information available</p>
           </div>
-          <div id="location">Fetching weather failed</div>
-        </div>
-      </div>
-      <div id="bottom-div">
-        <div class="bottom-div-div">
-          <div class="expected-temps-div">
-            <img src={arrow} alt="up-arrow" id="arrow-icon" class="arrow-up"/>
-            <span id="min">Error</span>
-          </div>
-          <div class="expected-temps-div">
-            <img src={arrow} alt="down-arrow" id="arrow-icon" class="arrow-down"/>
-            <span id="max">Error</span>
+          <div id="weather-temps-div">
+            <div id="weather-temp">
+              <div id="weather-f">Error</div>
+              <div id="weather-feels">Error</div>
+            </div>
+            <div id="weather-location">Fetching weather failed</div>
           </div>
         </div>
-        <div class="bottom-div-div">
-          <h4>Sunrise: <span id="sunrise">No info</span></h4>
-          <h4>Sunset: <span id="sunset">No info</span></h4>
+        <div id="weather-bottom-div">
+          <div class="weather-bottom-inner-div">
+            <div class="weather-expected-temps-div">
+              <img src={arrow} alt="up-arrow" id="weather-arrow-icon" class="weather-arrow-up"/>
+              <span id="weather-min">Error</span>
+            </div>
+            <div class="weather-expected-temps-div">
+              <img src={arrow} alt="down-arrow" id="weather-arrow-icon" class="weather-arrow-down"/>
+              <span id="weather-max">Error</span>
+            </div>
+          </div>
+          <div class="weather-bottom-inner-div">
+            <h4>Sunrise: <span id="weather-sunrise">No info</span></h4>
+            <h4>Sunset: <span id="weather-sunset">No info</span></h4>
+          </div>
         </div>
       </div>
     </div>

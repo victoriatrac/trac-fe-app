@@ -14,7 +14,7 @@ function Posts() {
   }, [])
 
   return (
-    <div class="container-tile" >
+    <div class="tile-container" >
       <div id="posts-container">
         <ul class="posts">
             {posts.map((post) => (
