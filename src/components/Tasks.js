@@ -56,37 +56,39 @@ function Tasks() {
   }
 
   return (
-    <div class="container-tile" id="task-tile">
-      <div id="task-top-div">
-        <span id="task-header">To Do</span>
+    <div class="tile-container">
+      <div id="task-tile">
+        <div id="task-top-div">
+          <span id="task-header">To Do</span>
+        </div>
+        <div id="tasks-div">
+          <ul>
+            {
+              ( taskList.length === 0 ? "no tasks to display" :
+              taskList.map(task => {
+                return (
+                  <li>
+                    <Task
+                      key={task.task}
+                      id={task.id}
+                      item={task}
+                      handleToggle={handleToggle}
+                    />
+                  </li>
+                )
+              }))
+            }
+        </ul>
+        </div>
+        <div id="task-bottom-div">
+          <TaskForm
+            form={form}
+            update={handleChange}
+            submit={handleSubmit}
+          />
+          <button class="task-clear-button" onClick={handleFilter}>X</button>
+        </div>
       </div>
-      <div id="tasks-div">
-        <ul>
-          {
-            ( taskList.length === 0 ? "no tasks to display" :
-            taskList.map(task => {
-              return (
-                <li>
-                  <Task
-                    key={task.task}
-                    id={task.id}
-                    item={task}
-                    handleToggle={handleToggle}
-                  />
-                </li>
-              )
-            }))
-          }
-      </ul>
-      </div>
-      <div id="task-bottom-div">
-        <TaskForm
-          form={form}
-          update={handleChange}
-          submit={handleSubmit}
-        />
-      </div>     
-      <button class="task-button" onClick={handleFilter}>X</button>
     </div>
   )
 }

@@ -15,10 +15,10 @@ function Task(props) {
   else {
     return (
       <div class="task-div">
-      <p onClick={markDone} class={item.checked ? "done" : ""}>{item.task}</p>
+        <p onClick={markDone} class={item.checked ? "done" : ""}>{item.task}</p>
       </div>
     )
   }
 }
 
-export default Task
+export default Task 

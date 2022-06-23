@@ -58,6 +58,9 @@
 - implemented axios call using mock API for now to save limited API calls for news site
 - added pagination to news app
 
+**6/23/22**
+- fixed margins/padding around components
+
 ## Known bugs
 [ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.
 [X] Tasklist: new items are created with the same ID due to Date.now() running only once. Causes new items to be treated as one.

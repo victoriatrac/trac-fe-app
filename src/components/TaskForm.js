@@ -16,7 +16,7 @@ function TaskForm(props) {
 
   return (
     <form class="task-form-container" onSubmit={handleSubmit}>
-      <div class="task-form-inputs">
+      <div class="task-form-inputs-div">
         <label
           for="task">
           <input
@@ -28,9 +28,9 @@ function TaskForm(props) {
             onChange={handleChange}
           />
         </label>
-        <div id="task-submit">
-          <button class="task-button">Submit</button>
-        </div>
+        {/* <div id="task-submit-div"> */}
+        <button class="task-submit-button">Submit</button>
+        {/* </div> */}
       </div>
     </form>
   )
