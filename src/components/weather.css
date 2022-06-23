@@ -3,7 +3,7 @@
   height: 70%;
   width: 100%;
   flex-flow: row;
-  padding: 1rem 1rem 0rem;
+  /* padding: 1rem 1rem 0rem; */
 }
 
 #icon-div {
@@ -57,7 +57,7 @@
   font-style: italic;
   display: flex;
   justify-content: center;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
 }
 
 #bottom-div {
@@ -66,7 +66,7 @@
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  padding: 0rem 1rem 1rem;
+  /* padding: 0rem 1rem 1rem; */
 }
 
 #bottom-div h4 {
