@@ -14,8 +14,8 @@ function Task(props) {
   }
   else {
     return (
-      <div className="task-div">
-      <p onClick={markDone} className={item.checked ? "done" : ""}>{item.task}</p>
+      <div class="task-div">
+      <p onClick={markDone} class={item.checked ? "done" : ""}>{item.task}</p>
       </div>
     )
   }

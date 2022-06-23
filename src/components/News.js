@@ -5,10 +5,9 @@ import './components.css'
 import Pagination from './Pagination'
 
 function Article(props) {
-  const { id, title, body } = props.data;
+  const { title, body } = props.data;
   return (
-    <div className="post">
-      <small>{id}</small>
+    <div class="post">
       <h1>{title}</h1>
       <p>{body}</p>
     </div>
@@ -33,7 +32,7 @@ function News() {
   if (error) return <h3>{error}</h3>
 
   return (
-    <div className="container-tile">
+    <div class="container-tile">
       <div id="news-container">
 
         {news.length > 0 ? (

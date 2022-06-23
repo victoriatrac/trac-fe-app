@@ -14,11 +14,11 @@ function Posts() {
   }, [])
 
   return (
-    <div className="container-tile" >
+    <div class="container-tile" >
       <div id="posts-container">
-        <ul className="posts">
+        <ul class="posts">
             {posts.map((post) => (
-                <li className="post">
+                <li class="post">
                   <h3>{post.fact}</h3>
                 </li>
             ))}

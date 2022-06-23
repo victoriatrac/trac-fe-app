@@ -4,6 +4,14 @@
   height: 80%;
 }
 
+.post h1 {
+  font-size: 2rem;
+}
+
+.post p {
+  font-size: .8rem;
+}
+
 /* #posts-container::-webkit-scrollbar {
   width: 0px;
 } */
