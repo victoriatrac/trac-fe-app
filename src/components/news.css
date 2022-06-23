@@ -1,15 +1,32 @@
 #news-container {
   overflow: auto;
-  padding: 1rem 3rem 1rem 2rem;
-  height: 80%;
+  /* padding: 1rem 3rem 1rem 2rem; */
+  height: 100%;
 }
 
-.post h1 {
-  font-size: 2rem;
+.news-article-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
-.post p {
+.news-article-header {
+  padding: .4rem;
+  width: 100%;
+}
+
+.news-article-container h1 {
+  font-size: 1.2rem;
+}
+
+.news-article-container p {
   font-size: .8rem;
+  width: 50%;
+}
+
+.news-article-info {
+  display: flex;
+  justify-content: space-around;
 }
 
 /* #posts-container::-webkit-scrollbar {

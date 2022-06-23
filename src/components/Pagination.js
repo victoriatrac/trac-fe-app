@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // import { getDefaultNormalizer } from "@testing-library/react"
 
-function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
+function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
   const [ pages ] = useState(Math.round(data.length / dataLimit ))
   const [ currentPage, setCurrentPage ] = useState(1)
 
@@ -35,41 +35,33 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
 
   return (
     <div>
-      <h1>{title}</h1>
-      <div class="data-container">
+      {getPaginatedData().map((d, idx) => (
+        <RenderComponent key={idx} data={d} />
+      ))}
 
-        {getPaginatedData().map((d, idx) => (
-          <RenderComponent key={idx} data={d} />
-        ))}
+      <button
+        onClick={goToPreviousPage}
+        class={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+      >
+        prev
+      </button>
 
-      </div>
-
-      <div class="pagination">
-
+      {getPaginationGroup().map((item, index) => (
         <button
-          onClick={goToPreviousPage}
-          class={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+          key={index}
+          onClick={changePage}
+          class={`paginationItem ${currentPage === item ? 'active' : null}`}
         >
-          prev
+          <span>{item}</span>
         </button>
+      ))}
 
-        {getPaginationGroup().map((item, index) => (
-          <button
-            key={index}
-            onClick={changePage}
-            class={`paginationItem ${currentPage === item ? 'active' : null}`}
-          >
-            <span>{item}</span>
-          </button>
-        ))}
-
-        <button
-          onClick={goToNextPage}
-          class={`next ${currentPage === pages ? 'disabled' : ''}`}
-        >
-          next
-        </button>
-      </div>
+      <button
+        onClick={goToNextPage}
+        class={`next ${currentPage === pages ? 'disabled' : ''}`}
+      >
+        next
+      </button>
     </div>
   )
 }
