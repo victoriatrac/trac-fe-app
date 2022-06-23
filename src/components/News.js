@@ -5,11 +5,29 @@ import './components.css'
 import Pagination from './Pagination'
 
 function Article(props) {
+  // const { title, description, source_id, image_url } = props.data;
+  // return (
+  //   <div class="news-article-container">
+  //     <div class="news-article-header">
+  //       <h1>{title}</h1>
+  //     </div>
+  //     <div class="news-article-info">
+  //       <p>{description}</p>
+  //       <img src={image_url} alt={source_id} height="150px" width="150px"/>
+  //     </div>
+  //   </div>
+  // );
+
   const { title, body } = props.data;
   return (
-    <div class="post">
-      <h1>{title}</h1>
-      <p>{body}</p>
+    <div class="news-article-container">
+      <div class="news-article-header">
+        <h1>{title}</h1>
+      </div>
+      <div class="news-article-info">
+        <p>{body}</p>
+        <img src="https://picsum.photos/150" alt="random image"/>
+      </div>
     </div>
   );
 }
@@ -22,7 +40,7 @@ function News() {
 
  useEffect(() => {
     axios
-      // .get("https://newsdata.io/api/1/news?apikey={key}&country=us&language=en")
+      // .get(`https://newsdata.io/api/1/news?apikey=${key}&country=us&language=en`)
       // .then((res) => setNews(res.data.results))
       .get('https://jsonplaceholder.typicode.com/posts')
       .then((res) => setNews(res.data))
@@ -40,7 +58,6 @@ function News() {
             <Pagination
               data={news}
               RenderComponent={Article}
-              title="Articles"
               pageLimit={5}
               dataLimit={10}
             />
