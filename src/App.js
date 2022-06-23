@@ -8,7 +8,7 @@ import News from './components/News'
 
 function App() {
   return (
-    <div className="App">
+    <div class="App">
       <Weather />
       <Tasks />
       <Posts />

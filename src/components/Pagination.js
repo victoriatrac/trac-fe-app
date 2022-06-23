@@ -36,7 +36,7 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
   return (
     <div>
       <h1>{title}</h1>
-      <div className="data-container">
+      <div class="data-container">
 
         {getPaginatedData().map((d, idx) => (
           <RenderComponent key={idx} data={d} />
@@ -44,11 +44,11 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
 
       </div>
 
-      <div className="pagination">
+      <div class="pagination">
 
         <button
           onClick={goToPreviousPage}
-          className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+          class={`prev ${currentPage === 1 ? 'disabled' : ''}`}
         >
           prev
         </button>
@@ -57,7 +57,7 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
           <button
             key={index}
             onClick={changePage}
-            className={`paginationItem ${currentPage === item ? 'active' : null}`}
+            class={`paginationItem ${currentPage === item ? 'active' : null}`}
           >
             <span>{item}</span>
           </button>
@@ -65,7 +65,7 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
 
         <button
           onClick={goToNextPage}
-          className={`next ${currentPage === pages ? 'disabled' : ''}`}
+          class={`next ${currentPage === pages ? 'disabled' : ''}`}
         >
           next
         </button>
