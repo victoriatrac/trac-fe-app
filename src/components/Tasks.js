@@ -4,8 +4,8 @@ import {v4 as uuid} from 'uuid'
 
 import TaskForm from './TaskForm'
 import Task from './Task'
-import './components.css'
-import './tasks.css'
+import '../css/components.css'
+import '../css/tasks.css'
 
 
 const initialForm = {

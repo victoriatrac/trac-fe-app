@@ -1,35 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import './news.css'
-import './components.css'
+import '../css/news.css'
+import '../css/components.css'
 import Pagination from './Pagination'
 
 function Article(props) {
-  // const { title, description, source_id, image_url } = props.data;
-  // return (
-  //   <div class="news-article-container">
-  //     <div class="news-article-header">
-  //       <h1>{title}</h1>
-  //     </div>
-  //     <div class="news-article-info">
-  //       <p>{description}</p>
-  //       <img src={image_url} alt={source_id} height="150px" width="150px"/>
-  //     </div>
-  //   </div>
-  // );
 
-  const { title, body } = props.data;
+  /* real article container for real data */
+  const { title, description, source_id, image_url } = props.data;
   return (
     <div class="news-article-container">
       <div class="news-article-header">
         <h1>{title}</h1>
       </div>
       <div class="news-article-info">
-        <p>{body}</p>
-        <img src="https://picsum.photos/150" alt="random image"/>
+        <p>{description}</p>
+        <img src={image_url} alt={source_id} height="150px" width="150px"/>
       </div>
     </div>
   );
+
+  /* faux article container for faux data */
+//   const { title, body } = props.data;
+//   return (
+//     <div class="news-article-container">
+//       <div class="news-article-header">
+//         <h1>{title}</h1>
+//       </div>
+//       <div class="news-article-info">
+//         <p>{body}</p>
+//         <img src="https://picsum.photos/150" alt="random"/>
+//       </div>
+//     </div>
+//   );
+
 }
 
 function News() {
@@ -40,10 +44,10 @@ function News() {
 
  useEffect(() => {
     axios
-      // .get(`https://newsdata.io/api/1/news?apikey=${key}&country=us&language=en`)
-      // .then((res) => setNews(res.data.results))
-      .get('https://jsonplaceholder.typicode.com/posts')
-      .then((res) => setNews(res.data))
+      .get(`https://newsdata.io/api/1/news?apikey=${key}&country=us&language=en`)
+      .then((res) => setNews(res.data.results))
+      // .get('https://jsonplaceholder.typicode.com/posts')
+      // .then((res) => setNews(res.data))
       .catch((error) => setError(error.message))
   }, [])
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import './tasks.css'
+import '../css/tasks.css'
 
 function TaskForm(props) {
   const { form, update, submit } = props

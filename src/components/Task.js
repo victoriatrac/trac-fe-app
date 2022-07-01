@@ -1,5 +1,5 @@
 import React from 'react'
-import './tasks.css'
+import '../css/tasks.css'
 
 function Task(props) {
   const { id, item, handleToggle } = props

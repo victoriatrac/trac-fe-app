@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
-import './components.css'
-import './weather.css'
+import '../css/components.css'
+import '../css/weather.css'
 
 import arrow from '../images/arrow-up.svg'
 
@@ -86,7 +86,7 @@ function Weather() {
       <div id="weather-tile">
         <div id="weather-top-div">
           <div id="weather-icon-div">
-            <img src="" alt="weather-icon" id="weather-icon-img" />
+            <img src="image.png" alt="weather-icon" id="weather-icon-img" />
             <p id="weather-desc">No information available</p>
           </div>
           <div id="weather-temps-div">
