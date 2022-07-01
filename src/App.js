@@ -1,5 +1,6 @@
-import './App.css'
+import './css/app.css'
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 import Weather from './components/Weather'
 import Tasks from './components/Tasks'
@@ -9,10 +10,16 @@ import News from './components/News'
 function App() {
   return (
     <div class="App">
-      <Weather />
+
+      <Routes>
+        <Route path='/' element={<>
+        <Weather />
       <Tasks />
       <Posts />
-      <News />
+      <News /></>} />
+        <Route path='posts' element={<><Posts /><News /></>} />
+      </Routes>
+
     </div>
   );
 }

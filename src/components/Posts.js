@@ -1,8 +1,8 @@
 import React from "react"
 import axios from "axios"
 
-import './components.css'
-import './posts.css'
+import '../css/components.css'
+import '../css/posts.css'
 
 function Posts() {
   const [ posts, setPosts ] = React.useState([])

@@ -1,0 +1,52 @@
+#nav-container {
+  height: 20vh;
+  min-height: 120px;
+  background-color: rgb(12, 36, 63);
+}
+
+#nav-profile-div {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  border: white .25rem solid;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-profile-div p {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+#nav {
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#nav p {
+  font-size: 2rem;
+}
+
+#nav li {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 1rem 3rem;
+}
+
+a:visited.nav-link, a:visited.current {
+  color: white;
+}
+
+.current {
+  text-decoration: none;
+  padding: 1rem 3rem .5rem;
+  border-bottom: .5rem solid black;
+}

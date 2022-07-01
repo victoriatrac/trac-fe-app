@@ -59,7 +59,20 @@
 - added pagination to news app
 
 **6/23/22**
-- fixed margins/padding around components
+- removed margins/padding around components
+
+**6/29/22**
+- installed react-router-dom
+- add div for top menu
+- fixed random compiler bugs
+
+**6/30/22**
+- implemented browser-router
+- moved css to new folder, relinked files
+- created navigation component
+- implemented NavLink for future nav styling
+- added basic navigation styling
+
 
 ## Known bugs
 [ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.
