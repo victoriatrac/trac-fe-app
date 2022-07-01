@@ -73,6 +73,9 @@
 - implemented NavLink for future nav styling
 - added basic navigation styling
 
+**7/1/22**
+- on news app, hid image tag for missing image sources
+
 
 ## Known bugs
 [ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.

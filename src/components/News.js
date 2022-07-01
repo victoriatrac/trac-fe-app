@@ -15,7 +15,7 @@ function Article(props) {
       </div>
       <div class="news-article-info">
         <p>{description}</p>
-        <img src={image_url} alt={source_id} height="150px" width="150px"/>
+        {image_url ? <img src={image_url} alt={source_id} height="150px" width="150px"/> : <></>}
       </div>
     </div>
   );
