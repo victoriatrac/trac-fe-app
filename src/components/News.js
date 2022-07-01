@@ -7,32 +7,32 @@ import Pagination from './Pagination'
 function Article(props) {
 
   /* real article container for real data */
-  const { title, description, source_id, image_url } = props.data;
+  // const { title, description, source_id, image_url } = props.data;
+  // return (
+  //   <div class="news-article-container">
+  //     <div class="news-article-header">
+  //       <h1>{title}</h1>
+  //     </div>
+  //     <div class="news-article-info">
+  //       <p class={image_url ? "news-article-container-p" : "news-article-container-p-missing-image"}>{description}</p>
+  //       {image_url ? <img src={image_url} alt={source_id} height="150px" width="150px"/> : <></>}
+  //     </div>
+  //   </div>
+  // );
+
+  /* faux article container for faux data */
+  const { title, body } = props.data;
   return (
     <div class="news-article-container">
       <div class="news-article-header">
         <h1>{title}</h1>
       </div>
       <div class="news-article-info">
-        <p>{description}</p>
-        {image_url ? <img src={image_url} alt={source_id} height="150px" width="150px"/> : <></>}
+        <p>{body}</p>
+        <img src="https://picsum.photos/150" alt="random"/>
       </div>
     </div>
   );
-
-  /* faux article container for faux data */
-//   const { title, body } = props.data;
-//   return (
-//     <div class="news-article-container">
-//       <div class="news-article-header">
-//         <h1>{title}</h1>
-//       </div>
-//       <div class="news-article-info">
-//         <p>{body}</p>
-//         <img src="https://picsum.photos/150" alt="random"/>
-//       </div>
-//     </div>
-//   );
 
 }
 
@@ -44,10 +44,10 @@ function News() {
 
  useEffect(() => {
     axios
-      .get(`https://newsdata.io/api/1/news?apikey=${key}&country=us&language=en`)
-      .then((res) => setNews(res.data.results))
-      // .get('https://jsonplaceholder.typicode.com/posts')
-      // .then((res) => setNews(res.data))
+      // .get(`https://newsdata.io/api/1/news?apikey=${key}&country=us&language=en`)
+      // .then((res) => setNews(res.data.results))
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .then((res) => setNews(res.data))
       .catch((error) => setError(error.message))
   }, [])
 
@@ -56,7 +56,9 @@ function News() {
   return (
     <div class="tile-container">
       <div id="news-container">
-
+        <p>
+          If you're seeing this, this is the fake data that I'm using as the real news API I'm calling has a limited number of calls.
+        </p>
         {news.length > 0 ? (
           <>
             <Pagination

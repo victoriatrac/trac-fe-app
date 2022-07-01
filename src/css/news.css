@@ -4,6 +4,10 @@
   height: 100%;
 }
 
+#news-container p {
+  padding-bottom: 2rem;
+}
+
 .news-article-container {
   display: flex;
   flex-flow: row wrap;
@@ -19,9 +23,14 @@
   font-size: 1.2rem;
 }
 
-.news-article-container p {
+.news-article-container-p {
   font-size: .8rem;
   width: 50%;
+}
+
+.news-article-container-p-missing-image {
+  font-size: .8rem;
+  width: 90%
 }
 
 .news-article-info {
