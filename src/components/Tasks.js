@@ -43,6 +43,11 @@ function Tasks() {
     console.log("mapped", taskList)
   }
 
+  const handleSubmit = () => {
+    setTasks([...taskList, form])
+    setForm({...initialForm, id: uuid()})
+  }
+
   const handleFilter = () => {
     let filtered = taskList.filter(task => {
       return !task.checked
@@ -50,9 +55,19 @@ function Tasks() {
     setTasks(filtered)
   }
 
-  const handleSubmit = () => {
-    setTasks([...taskList, form])
-    setForm({...initialForm, id: uuid()})
+  const editTask = (id, editedTask) => {
+    const editedTaskList = taskList.map(task => {
+      if (id === task.id) {
+        return {...task, name: editedTask}
+      }
+      return task
+    })
+    setTasks(editedTaskList)
+  }
+
+  const deleteTask = (id) => {
+    const remainingTasks = taskList.filter(task => id !== task.id)
+    setTasks(remainingTasks)
   }
 
   return (
@@ -62,6 +77,7 @@ function Tasks() {
           <span id="task-header">To Do</span>
         </div>
         <div id="tasks-div">
+          <p>Number of tasks: {taskList.length}</p>
           <ul>
             {
               ( taskList.length === 0 ? "no tasks to display" :
@@ -73,6 +89,8 @@ function Tasks() {
                       id={task.id}
                       item={task}
                       handleToggle={handleToggle}
+                      deleteTask={deleteTask}
+                      editTask={editTask}
                     />
                   </li>
                 )
