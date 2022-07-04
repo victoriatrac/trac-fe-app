@@ -31,6 +31,7 @@ Tasks.js
   height: 60%;
   width: 100%;
   border: solid rgb(230, 226, 208) 1px;
+  overflow: auto;
 }
 
 ul {

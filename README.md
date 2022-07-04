@@ -1,11 +1,38 @@
 # Victoria Trac's App of Apps
 
+View my current status on my Trello board: https://trello.com/b/6wmxSy8i/app-of-apps-kanban
+
+Deployed version: https://app-of-apps.vercel.app/
+** Weather app API key not working through Vercel
+** News app is displaying placeholder data so I don't overuse the API
+
 **A project showcasing my ability to:**
 - create a functional user interface
-- integrate an API using axios
-- utilize React + Redux for state management
-- create a form 
-- ? authorization ?
+- handle API calls and display the data
+- implement state management
+- modify the DOM and display components with react-router
+- create a dynamic form; utilize validation
+- deploy an application
+- write clean, version-controlled code
+
+## Technologies Used
+- JavaScript
+- vanilla CSS <3
+- React
+- React-router
+- JSON Server
+- Axios
+- Yup
+- Vercel
+
+## Database Resources Used
+Appreciative of the *free* resources that are making this project possible for me to work on:
+- OpenWeatherMap: https://openweathermap.org/
+- Cat Fact API: https://catfact.ninja/
+- JSON Placeholder: https://jsonplaceholder.typicode.com/
+- Lorem Picsum: https://picsum.photos/
+- NewsData: https://newsdata.io/
+- JSON Server: https://github.com/typicode/json-server
 
 ## Change Log
 
@@ -85,8 +112,6 @@
 
 **7/4/22**
 - disabled submit button on null task input
-
-
-## Known bugs
-[ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.
-[X] Tasklist: new items are created with the same ID due to Date.now() running only once. Causes new items to be treated as one.
+- fixed bug with validation, discovered more
+- added overflow to tasklist div
+- BIG readme update

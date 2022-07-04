@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {v4 as uuid} from 'uuid'
-// import TaskFormSchema from '../validation/TaskFormSchema'
+import TaskFormSchema from '../validation/TaskFormSchema'
 // import * as Yup from 'yup'
 
 import TaskForm from './TaskForm'
@@ -23,18 +23,18 @@ const initialForm = {
   checked: false
 }
 
-// const initialFormErrors = {
-//   task: ''
-// }
+const initialFormErrors = {
+  task: ''
+}
 
-// const initialDisabled = true
+const initialDisabled = true
 
 function Tasks() {
   const [ taskList, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
   const [ filter, setFilter ] = useState('All')
-  // const [ formErrors, setFormErrors ] = useState({task: ''})
-  const [ disabled, setDisabled ] = useState(true)
+  const [ formErrors, setFormErrors ] = useState({initialFormErrors})
+  const [ disabled, setDisabled ] = useState(initialDisabled)
 
 
   useEffect(() => {
@@ -60,11 +60,11 @@ function Tasks() {
     setForm({...form, [name]: value})
   }
 
-  // useEffect(() => {
-  //   TaskFormSchema.isValid(form)
-  //     .then(isValid => setDisabled(!isValid))
-  //     .catch(err => console.log(err))
-  // }, [form])
+  useEffect(() => {
+    TaskFormSchema.isValid(form)
+      .then(isValid => setDisabled(!isValid))
+      .catch(err => console.log(err))
+  }, [form])
 
   const handleToggle = (id) => {
     let mapped = taskList.map(task => {
@@ -153,7 +153,7 @@ function Tasks() {
             update={handleChange}
             submit={handleSubmit}
             disabled={disabled}
-            // errors={formErrors}
+            errors={formErrors}
           />
           <button className="task-clear-button" onClick={handleFilter}>X</button>
         </div>

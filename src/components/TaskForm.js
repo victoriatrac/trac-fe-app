@@ -7,7 +7,7 @@ function TaskForm(props) {
     update, 
     submit, 
     disabled, 
-    // errors 
+    errors 
   } = props
 
   const handleChange = event => {
@@ -38,9 +38,9 @@ function TaskForm(props) {
           Submit
         </button>
       </div>
-      {/* <div className="task-form-errors">
+      <div className="task-form-errors">
         {errors.task}
-      </div> */}
+      </div>
     </form>
   )
 }
