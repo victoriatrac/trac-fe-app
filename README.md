@@ -112,5 +112,6 @@ Appreciative of the *free* resources that are making this project possible for m
 
 **7/4/22**
 - disabled submit button on null task input
-
-
+- fixed bug with validation, discovered more
+- added overflow to tasklist div
+- BIG readme update
