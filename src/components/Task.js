@@ -27,8 +27,8 @@ function Task(props) {
   const editText = `editing ${item.task}`
 
   const editTemplate = (
-    <div class="task-div">
-      <form>
+    <div className="task-div">
+      <form onSubmit={handleSubmit}>
         <input
           id={id} 
           type="text"
@@ -44,7 +44,6 @@ function Task(props) {
         </button>
         <button
           type="submit"
-          onSubmit={handleSubmit}
         >
           Save
         </button>
@@ -52,18 +51,18 @@ function Task(props) {
     </div>
   )
 
-  const viewTemplate = (
-    <div class="task-div">
-      <p onClick={markDone} class={item.checked ? "done" : ""}>{item.task}</p>
-      <button type="button" onClick={() => setEditing(true)}>Edit</button>
-      <button type="button" onClick={() => deleteTask(id)}>Delete</button>
-    </div>
-  )
-
   const markDone = (e) => {
     e.preventDefault()
     handleToggle(id)
   }
+
+  const viewTemplate = (
+    <div className="task-div">
+      <p onClick={markDone} className={item.checked ? "done" : ""}>{item.task}</p>
+      <button type="button" onClick={() => setEditing(true)}>Edit</button>
+      <button type="button" onClick={() => deleteTask(id)}>Delete</button>
+    </div>
+  )
   
   if (!item) {
     return <p>No tasks to show</p>
@@ -71,8 +70,8 @@ function Task(props) {
   else {
 
     // return (
-    //   <div class="task-div">
-    //     <p onClick={markDone} class={item.checked ? "done" : ""}>{item.task}</p>
+    //   <div className="task-div">
+    //     <p onClick={markDone} className={item.checked ? "done" : ""}>{item.task}</p>
     //     <button>Edit</button>
     //     <button type="button" onClick={() => deleteTask(id)}>Delete</button>
     //   </div>

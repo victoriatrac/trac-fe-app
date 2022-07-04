@@ -9,7 +9,7 @@ import News from './components/News'
 
 function App() {
   return (
-    <div class="App">
+    <div className="App">
 
       <Routes>
         <Route path='/' element={<>

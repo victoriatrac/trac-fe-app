@@ -58,10 +58,11 @@ function Tasks() {
   const editTask = (id, editedTask) => {
     const editedTaskList = taskList.map(task => {
       if (id === task.id) {
-        return {...task, name: editedTask}
+        return {...task, task: editedTask}
       }
       return task
     })
+    console.log(editedTaskList)
     setTasks(editedTaskList)
   }
 
@@ -71,7 +72,7 @@ function Tasks() {
   }
 
   return (
-    <div class="tile-container">
+    <div className="tile-container">
       <div id="task-tile">
         <div id="task-top-div">
           <span id="task-header">To Do</span>
@@ -104,7 +105,7 @@ function Tasks() {
             update={handleChange}
             submit={handleSubmit}
           />
-          <button class="task-clear-button" onClick={handleFilter}>X</button>
+          <button className="task-clear-button" onClick={handleFilter}>X</button>
         </div>
       </div>
     </div>
