@@ -83,6 +83,9 @@
 - added ability to delete single tasks
 - added ability to edit tasks (not fully functional)
 
+**7/4/22**
+- disabled submit button on null task input
+
 
 ## Known bugs
 [ ] Weather: Vercel's environment variables do not correctly deploy. Can't get access to weather app API.
