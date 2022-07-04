@@ -7,6 +7,13 @@ import Task from './Task'
 import '../css/components.css'
 import '../css/tasks.css'
 
+const FILTER_MAP = {
+  All: () => true,
+  Active: task => !task.checked,
+  Complete: task => task.checked
+}
+
+const FILTER_NAMES = Object.keys(FILTER_MAP)
 
 const initialForm = {
   id: uuid(),
@@ -17,6 +24,7 @@ const initialForm = {
 function Tasks() {
   const [ taskList, setTasks ] = useState([])
   const [ form, setForm ] = useState(initialForm)
+  const [ filter, setFilter ] = useState('All')
 
   useEffect(() => {
     axios
@@ -71,6 +79,21 @@ function Tasks() {
     setTasks(remainingTasks)
   }
 
+  const FilterButton = (props) => {
+    console.log(props)
+    return (
+      <button
+        type="button"
+        aria-pressed={props.isPressed}
+        onClick={() => props.setFilter(props.item)}
+      >Show {props.item} tasks</button>
+    )
+  }
+
+  const filterList = FILTER_NAMES.map(name => (
+    <FilterButton key={name} item={name} isPressed={name === filter} setFilter={setFilter} />
+  ))
+
   return (
     <div className="tile-container">
       <div id="task-tile">
@@ -79,10 +102,13 @@ function Tasks() {
         </div>
         <div id="tasks-div">
           <p>Number of tasks: {taskList.length}</p>
+          <p>{filterList}</p>
           <ul>
             {
               ( taskList.length === 0 ? "no tasks to display" :
-              taskList.map(task => {
+              taskList
+                .filter(FILTER_MAP[filter])
+                .map(task => {
                 return (
                   <li>
                     <Task

@@ -58,9 +58,24 @@ function Task(props) {
 
   const viewTemplate = (
     <div className="task-div">
-      <p onClick={markDone} className={item.checked ? "done" : ""}>{item.task}</p>
-      <button type="button" onClick={() => setEditing(true)}>Edit</button>
-      <button type="button" onClick={() => deleteTask(id)}>Delete</button>
+      <p
+        onClick={markDone} 
+        className={item.checked ? "done" : ""}
+      >
+        {item.task}
+      </p>
+      <button
+        type="button" 
+        onClick={() => setEditing(true)}
+      >
+        Edit
+      </button>
+      <button
+        type="button" 
+        onClick={() => deleteTask(id)}
+      >
+        Delete
+      </button>
     </div>
   )
   
@@ -77,7 +92,9 @@ function Task(props) {
     //   </div>
     // )
 
-    return (<>{isEditing ? editTemplate : viewTemplate}</>)
+    return (
+      <>{isEditing ? editTemplate : viewTemplate}</>
+    )
   }
 }
 
