@@ -75,6 +75,13 @@
 
 **7/1/22**
 - on news app, hid image tag for missing image sources
+- on news app, changed size of text div depending on image render
+
+**7/3/22**
+- minor cleanup
+- on task app, added ability to count tasks
+- added ability to delete single tasks
+- added ability to edit tasks (not fully functional)
 
 
 ## Known bugs

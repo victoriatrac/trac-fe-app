@@ -13,11 +13,14 @@ function App() {
 
       <Routes>
         <Route path='/' element={<>
-        <Weather />
-      <Tasks />
-      <Posts />
-      <News /></>} />
-        <Route path='posts' element={<><Posts /><News /></>} />
+          <Weather />
+          <Tasks />
+          <Posts />
+          <News />
+        </>} />
+        <Route path='posts' element={<>
+          <Posts />
+        </>} />
       </Routes>
 
     </div>
