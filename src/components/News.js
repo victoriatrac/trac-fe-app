@@ -9,12 +9,12 @@ function Article(props) {
   /* real article container for real data */
   // const { title, description, source_id, image_url } = props.data;
   // return (
-  //   <div class="news-article-container">
-  //     <div class="news-article-header">
+  //   <div className="news-article-container">
+  //     <div className="news-article-header">
   //       <h1>{title}</h1>
   //     </div>
-  //     <div class="news-article-info">
-  //       <p class={image_url ? "news-article-container-p" : "news-article-container-p-missing-image"}>{description}</p>
+  //     <div className="news-article-info">
+  //       <p className={image_url ? "news-article-container-p" : "news-article-container-p-missing-image"}>{description}</p>
   //       {image_url ? <img src={image_url} alt={source_id} height="150px" width="150px"/> : <></>}
   //     </div>
   //   </div>
@@ -23,11 +23,11 @@ function Article(props) {
   /* faux article container for faux data */
   const { title, body } = props.data;
   return (
-    <div class="news-article-container">
-      <div class="news-article-header">
+    <div className="news-article-container">
+      <div className="news-article-header">
         <h1>{title}</h1>
       </div>
-      <div class="news-article-info">
+      <div className="news-article-info">
         <p>{body}</p>
         <img src="https://picsum.photos/150" alt="random"/>
       </div>
@@ -40,7 +40,7 @@ function News() {
   const [ news, setNews ] = useState([])
   const [ error, setError ] = useState("")
 
-  const key = "pub_8600653f1182d8379155ec357665f2ade19e"
+  // const key = "pub_8600653f1182d8379155ec357665f2ade19e"
 
  useEffect(() => {
     axios
@@ -54,7 +54,7 @@ function News() {
   if (error) return <h3>{error}</h3>
 
   return (
-    <div class="tile-container">
+    <div className="tile-container">
       <div id="news-container">
         <p>
           If you're seeing this, this is the fake data that I'm using as the real news API I'm calling has a limited number of calls.

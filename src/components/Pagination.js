@@ -41,7 +41,7 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
 
       <button
         onClick={goToPreviousPage}
-        class={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+        className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
       >
         prev
       </button>
@@ -50,7 +50,7 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
         <button
           key={index}
           onClick={changePage}
-          class={`paginationItem ${currentPage === item ? 'active' : null}`}
+          className={`paginationItem ${currentPage === item ? 'active' : null}`}
         >
           <span>{item}</span>
         </button>
@@ -58,7 +58,7 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
 
       <button
         onClick={goToNextPage}
-        class={`next ${currentPage === pages ? 'disabled' : ''}`}
+        className={`next ${currentPage === pages ? 'disabled' : ''}`}
       >
         next
       </button>

@@ -82,7 +82,7 @@ function Weather() {
   })
 
   return (
-    <div class="tile-container">
+    <div className="tile-container">
       <div id="weather-tile">
         <div id="weather-top-div">
           <div id="weather-icon-div">
@@ -98,17 +98,17 @@ function Weather() {
           </div>
         </div>
         <div id="weather-bottom-div">
-          <div class="weather-bottom-inner-div">
-            <div class="weather-expected-temps-div">
-              <img src={arrow} alt="up-arrow" id="weather-arrow-icon" class="weather-arrow-up"/>
+          <div className="weather-bottom-inner-div">
+            <div className="weather-expected-temps-div">
+              <img src={arrow} alt="up-arrow" id="weather-arrow-icon" className="weather-arrow-up"/>
               <span id="weather-min">Error</span>
             </div>
-            <div class="weather-expected-temps-div">
-              <img src={arrow} alt="down-arrow" id="weather-arrow-icon" class="weather-arrow-down"/>
+            <div className="weather-expected-temps-div">
+              <img src={arrow} alt="down-arrow" id="weather-arrow-icon" className="weather-arrow-down"/>
               <span id="weather-max">Error</span>
             </div>
           </div>
-          <div class="weather-bottom-inner-div">
+          <div className="weather-bottom-inner-div">
             <h4>Sunrise: <span id="weather-sunrise">No info</span></h4>
             <h4>Sunset: <span id="weather-sunset">No info</span></h4>
           </div>
