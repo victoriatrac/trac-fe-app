@@ -106,14 +106,23 @@ function Tasks() {
     return (
       <button
         type="button"
+        className={props.isPressed ? "tasks-filter-active" : "tasks-filter-button"}
         aria-pressed={props.isPressed}
         onClick={() => props.setFilter(props.item)}
-      >{props.item}</button>
+      >
+        {console.log(props.isPressed)}
+        {props.item}
+      </button>
     )
   }
 
   const filterList = FILTER_NAMES.map(name => (
-    <FilterButton key={name} item={name} isPressed={name === filter} setFilter={setFilter} />
+    <FilterButton 
+      key={name} 
+      item={name} 
+      isPressed={name === filter} 
+      setFilter={setFilter} 
+    />
   ))
 
   return (
