@@ -3,8 +3,9 @@
 View my current status on my Trello board: https://trello.com/b/6wmxSy8i/app-of-apps-kanban
 
 Deployed version: https://app-of-apps.vercel.app/
-** Weather app API key not working through Vercel
-** News app is displaying placeholder data so I don't overuse the API
+Notes for Vercel deployment:
+- Weather app API key not working through Vercel
+- News app is displaying placeholder data so I don't overuse the API
 
 **A project showcasing my ability to:**
 - create a functional user interface
@@ -72,10 +73,10 @@ Appreciative of the *free* resources that are making this project possible for m
 - added third placeholder component
 
 **6/17/22**
-- added functionality to task list for:
--- toggling completed state for items
--- striking through completed items
--- removing completed items
+added functionality to task list for:
+- toggling completed state for items
+- striking through completed items
+- removing completed items
 
 **6/21/22**
 - fixed ID bug in task app
@@ -115,3 +116,4 @@ Appreciative of the *free* resources that are making this project possible for m
 - fixed bug with validation, discovered more
 - added overflow to tasklist div
 - BIG readme update
+- edit and delete task buttons only appear on hover

@@ -34,6 +34,23 @@ Tasks.js
   overflow: auto;
 }
 
+#tasks-filter {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+#tasks-filter button {
+  color: rgb(230, 226, 208);
+  font-size: .8rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: solid rgb(230, 226, 208) 1px;
+  border-radius: 1rem;
+  padding: .25rem .5rem;
+  margin: .5rem 0;
+}
+
 ul {
   padding-left: 2.5rem;
 }
@@ -90,6 +107,7 @@ TaskForm.js
     226,
     208) 1px;
   border-radius: 40px;
+  margin: 0 1rem;
 }
 
 .task-clear-button {
@@ -101,7 +119,7 @@ TaskForm.js
   padding: .25rem;
   background-color: transparent;
   border: solid rgb(230, 226, 208) 1px;
-  border-radius: 40px;
+  border-radius: 50%;
 }
 
 /*

@@ -12,16 +12,25 @@ function Task(props) {
 
   const [ isEditing, setEditing ] = useState(false)
   const [ editedTask, setEditedTask ] = useState('')
+  const [ isHovering, setIsHovering ] = useState(false)
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     setEditedTask(e.target.value)
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault()
     editTask(id, editedTask)
     setEditedTask("")
     setEditing(false)
+  }
+
+  const handleMouseOver = () => {
+    setIsHovering(true)
+  }
+  
+  const handleMouseOut = () => {
+    setIsHovering(false)
   }
 
   const editText = `editing ${item.task}`
@@ -61,28 +70,34 @@ function Task(props) {
       <p
         onClick={markDone} 
         className={item.checked ? "done" : ""}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       >
         {item.task}
       </p>
-      <button
-        type="button" 
-        onClick={() => setEditing(true)}
-      >
-        Edit
-      </button>
-      <button
-        type="button" 
-        onClick={() => deleteTask(id)}
-      >
-        Delete
-      </button>
+      {isHovering && (
+        <span>
+          <button
+            type="button" 
+            onClick={() => setEditing(true)}
+          >
+            Edit
+          </button>
+          <button
+            type="button" 
+            onClick={() => deleteTask(id)}
+          >
+            Delete
+          </button>
+        </span>
+      )}
     </div>
   )
   
-  if (!item) {
-    return <p>No tasks to show</p>
-  }
-  else {
+  // if (!item) {
+  //   return <p>No tasks to show</p>
+  // }
+  // else {
 
     // return (
     //   <div className="task-div">
@@ -95,7 +110,7 @@ function Task(props) {
     return (
       <>{isEditing ? editTemplate : viewTemplate}</>
     )
-  }
+  // }
 }
 
 export default Task 

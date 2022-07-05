@@ -108,7 +108,7 @@ function Tasks() {
         type="button"
         aria-pressed={props.isPressed}
         onClick={() => props.setFilter(props.item)}
-      >Show {props.item} tasks</button>
+      >{props.item}</button>
     )
   }
 
@@ -120,14 +120,13 @@ function Tasks() {
     <div className="tile-container">
       <div id="task-tile">
         <div id="task-top-div">
-          <span id="task-header">To Do</span>
+          <span id="task-header">To Do: {taskList.length}</span>
         </div>
         <div id="tasks-div">
-          <p>Number of tasks: {taskList.length}</p>
-          <p>{filterList}</p>
+          <div id="tasks-filter">{filterList}</div>
           <ul>
             {
-              ( taskList.length === 0 ? "no tasks to display" :
+              ( taskList.length === 0 ? "No tasks left. Good job!" :
               taskList
                 .filter(FILTER_MAP[filter])
                 .map(task => {
