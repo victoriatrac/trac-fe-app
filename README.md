@@ -117,3 +117,7 @@ added functionality to task list for:
 - added overflow to tasklist div
 - BIG readme update
 - edit and delete task buttons only appear on hover
+
+**7/6/22**
+- edit and delete task buttons changed to text, positioned to right
+- 
