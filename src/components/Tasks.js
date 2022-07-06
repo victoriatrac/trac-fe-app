@@ -106,33 +106,45 @@ function Tasks() {
     return (
       <button
         type="button"
+        className={props.isPressed ? "tasks-filter-active" : "tasks-filter-button"}
         aria-pressed={props.isPressed}
         onClick={() => props.setFilter(props.item)}
-      >Show {props.item} tasks</button>
+      >
+        {console.log(props.isPressed)}
+        {props.item}
+      </button>
     )
   }
 
   const filterList = FILTER_NAMES.map(name => (
-    <FilterButton key={name} item={name} isPressed={name === filter} setFilter={setFilter} />
+    <FilterButton 
+      key={name} 
+      item={name} 
+      isPressed={name === filter} 
+      setFilter={setFilter} 
+    />
   ))
 
   return (
     <div className="tile-container">
       <div id="task-tile">
         <div id="task-top-div">
-          <span id="task-header">To Do</span>
+          <span id="task-header">
+            To Do: {taskList.length}
+          </span>
         </div>
         <div id="tasks-div">
-          <p>Number of tasks: {taskList.length}</p>
-          <p>{filterList}</p>
+          <div id="tasks-filter">
+            {filterList}
+          </div>
           <ul>
             {
-              ( taskList.length === 0 ? "no tasks to display" :
+              ( taskList.length === 0 ? "No tasks left. Good job!" :
               taskList
                 .filter(FILTER_MAP[filter])
                 .map(task => {
                 return (
-                  <li>
+                  <li class="draggable">
                     <Task
                       key={task.task}
                       id={task.id}
