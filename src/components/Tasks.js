@@ -129,10 +129,14 @@ function Tasks() {
     <div className="tile-container">
       <div id="task-tile">
         <div id="task-top-div">
-          <span id="task-header">To Do: {taskList.length}</span>
+          <span id="task-header">
+            To Do: {taskList.length}
+          </span>
         </div>
         <div id="tasks-div">
-          <div id="tasks-filter">{filterList}</div>
+          <div id="tasks-filter">
+            {filterList}
+          </div>
           <ul>
             {
               ( taskList.length === 0 ? "No tasks left. Good job!" :
@@ -140,7 +144,7 @@ function Tasks() {
                 .filter(FILTER_MAP[filter])
                 .map(task => {
                 return (
-                  <li>
+                  <li class="draggable">
                     <Task
                       key={task.task}
                       id={task.id}
