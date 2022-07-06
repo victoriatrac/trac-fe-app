@@ -144,7 +144,7 @@ function Tasks() {
                 .filter(FILTER_MAP[filter])
                 .map(task => {
                 return (
-                  <li class="draggable">
+                  <li>
                     <Task
                       key={task.task}
                       id={task.id}

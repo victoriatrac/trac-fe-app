@@ -66,18 +66,18 @@ function Task(props) {
   }
 
   const viewTemplate = (
-    <div className="task-div">
-      <p
+    <div className="task-div"
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}>
+      <span
         onClick={markDone} 
         className={item.checked ? "done" : ""}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
       >
         {item.task}
-      </p>
+      </span>
       {isHovering && (
-        <span>
-          <button
+        <span className="task-buttons">
+          {/* <button
             type="button" 
             onClick={() => setEditing(true)}
           >
@@ -88,7 +88,20 @@ function Task(props) {
             onClick={() => deleteTask(id)}
           >
             Delete
-          </button>
+          </button> */}
+
+          <p
+            type="button" 
+            onClick={() => setEditing(true)}
+          >
+            Edit
+          </p>
+          <p
+            type="button" 
+            onClick={() => deleteTask(id)}
+          >
+            Delete
+          </p>
         </span>
       )}
     </div>
