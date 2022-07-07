@@ -130,7 +130,7 @@ function Tasks() {
       <div id="task-tile">
         <div id="task-top-div">
           <span id="task-header">
-            To Do: {taskList.length}
+            To Do
           </span>
         </div>
         <div id="tasks-div">
@@ -167,7 +167,13 @@ function Tasks() {
             disabled={disabled}
             errors={formErrors}
           />
-          <button className="task-clear-button" onClick={handleFilter}>X</button>
+          <button
+            className="task-clear-button" 
+            onClick={handleFilter}
+          >
+            Clear
+          </button>
+          <div>Total Tasks: {taskList.length}</div>
         </div>
       </div>
     </div>
