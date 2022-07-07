@@ -4,6 +4,7 @@ import '../css/news.css'
 import '../css/components.css'
 import Pagination from './Pagination'
 
+/* Article component for displaying news data */
 function Article(props) {
 
   /* real article container for real data */
@@ -25,10 +26,14 @@ function Article(props) {
   return (
     <div className="news-article-container">
       <div className="news-article-header">
-        <h1>{title}</h1>
+        <h1>
+          {title}
+        </h1>
       </div>
       <div className="news-article-info">
-        <p>{body}</p>
+        <p>
+          {body}
+        </p>
         <img src="https://picsum.photos/150" alt="random"/>
       </div>
     </div>
@@ -42,7 +47,8 @@ function News() {
 
   // const key = "pub_8600653f1182d8379155ec357665f2ade19e"
 
- useEffect(() => {
+  /* Axios call for news data */
+  useEffect(() => {
     axios
       // .get(`https://newsdata.io/api/1/news?apikey=${key}&country=us&language=en`)
       // .then((res) => setNews(res.data.results))
@@ -51,6 +57,7 @@ function News() {
       .catch((error) => setError(error.message))
   }, [])
 
+  /* If there's an error from the axios call, display it */
   if (error) return <h3>{error}</h3>
 
   return (
@@ -59,6 +66,8 @@ function News() {
         <p>
           If you're seeing this, this is the fake data that I'm using as the real news API I'm calling has a limited number of calls.
         </p>
+
+        {/* if no articles exist, show "No news to display". Otherwise, display the pagination component and pass the news data, render component, and other parameters through. */}
         {news.length > 0 ? (
           <>
             <Pagination

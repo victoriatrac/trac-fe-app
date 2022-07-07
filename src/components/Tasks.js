@@ -4,19 +4,24 @@ import {v4 as uuid} from 'uuid'
 import TaskFormSchema from '../validation/TaskFormSchema'
 // import * as Yup from 'yup'
 
+/* Component that displays all of the current tasks */
+
 import TaskForm from './TaskForm'
 import Task from './Task'
 import '../css/components.css'
 import '../css/tasks.css'
 
+/* Maps through the tasks by checked state to create the filters */
 const FILTER_MAP = {
   All: () => true,
   Active: task => !task.checked,
   Complete: task => task.checked
 }
 
+/* Creates the text for the filter buttons using the filter map keys */
 const FILTER_NAMES = Object.keys(FILTER_MAP)
 
+/* Initial form state for new task input*/
 const initialForm = {
   id: uuid(),
   task: "",
@@ -27,6 +32,7 @@ const initialFormErrors = {
   task: ''
 }
 
+/* Starts submit button as disabled */
 const initialDisabled = true
 
 function Tasks() {
@@ -38,6 +44,7 @@ function Tasks() {
 
 
   useEffect(() => {
+    /* Axios call to get the fake data from json-server */
     axios
       .get(`http://localhost:1234/tasks`)
       // .get(`https://fakeapi.com`)
@@ -50,6 +57,7 @@ function Tasks() {
       })
   }, []) 
 
+  /* Handles change for new task input */
   const handleChange = (name, value) => {
     // Yup
     //   .reach(TaskFormSchema, name)
@@ -60,25 +68,28 @@ function Tasks() {
     setForm({...form, [name]: value})
   }
 
+  /* Checks to see if the text input meets the validation requirements (not empty) */
   useEffect(() => {
     TaskFormSchema.isValid(form)
       .then(isValid => setDisabled(!isValid))
       .catch(err => console.log(err))
   }, [form])
 
+  /* Toggles the task's completed state when activated */
   const handleToggle = (id) => {
     let mapped = taskList.map(task => {
       return task.id === id ? { ...task, checked: !task.checked } : { ...task }
     })
     setTasks(mapped)
-    console.log("mapped", taskList)
   }
 
+  /* Handles submission for new tasks, sets id to uuid so that it's unique */
   const handleSubmit = () => {
     setTasks([...taskList, form])
     setForm({...initialForm, id: uuid()})
   }
 
+  /* Filter handler for the clear button */
   const handleFilter = () => {
     let filtered = taskList.filter(task => {
       return !task.checked
@@ -86,6 +97,7 @@ function Tasks() {
     setTasks(filtered)
   }
 
+  /* Updates the task list in state when one is edited */
   const editTask = (id, editedTask) => {
     const editedTaskList = taskList.map(task => {
       if (id === task.id) {
@@ -97,11 +109,13 @@ function Tasks() {
     setTasks(editedTaskList)
   }
 
+  /* Removes individual task */
   const deleteTask = (id) => {
     const remainingTasks = taskList.filter(task => id !== task.id)
     setTasks(remainingTasks)
   }
 
+  /* Sets the task filter button's class depending on if its active */
   const FilterButton = (props) => {
     return (
       <button
@@ -110,12 +124,12 @@ function Tasks() {
         aria-pressed={props.isPressed}
         onClick={() => props.setFilter(props.item)}
       >
-        {console.log(props.isPressed)}
         {props.item}
       </button>
     )
   }
 
+  /* Map over filter names to create buttons */
   const filterList = FILTER_NAMES.map(name => (
     <FilterButton 
       key={name} 

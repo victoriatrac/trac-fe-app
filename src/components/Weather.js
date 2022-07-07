@@ -6,13 +6,16 @@ import '../css/weather.css'
 
 import arrow from '../images/arrow-up.svg'
 
-// helper function for temp conversion
+/* Waather application component */
+
+/* Helper function for temp conversion */
 function ConvertCtoF(celcius) {
   const fahrenheit = (celcius * 9) / 5 + 32
   return fahrenheit
 }
 
 function Weather() {
+  /* On load, check to see if the user's allowed geolocation */
   window.addEventListener('load', () => {
     if (navigator.geolocation) {
     
@@ -86,31 +89,66 @@ function Weather() {
       <div id="weather-tile">
         <div id="weather-top-div">
           <div id="weather-icon-div">
-            <img src="image.png" alt="weather-icon" id="weather-icon-img" />
-            <p id="weather-desc">No information available</p>
+            <img 
+              src="image.png" 
+              alt="weather-icon" 
+              id="weather-icon-img" 
+            />
+            <p id="weather-desc">
+              No information available
+            </p>
           </div>
           <div id="weather-temps-div">
             <div id="weather-temp">
-              <div id="weather-f">Error</div>
-              <div id="weather-feels">Error</div>
+              <div id="weather-f">
+                Error
+              </div>
+              <div id="weather-feels">
+                Error
+              </div>
             </div>
-            <div id="weather-location">Fetching weather failed</div>
+            <div id="weather-location">
+              Fetching weather failed
+            </div>
           </div>
         </div>
         <div id="weather-bottom-div">
           <div className="weather-bottom-inner-div">
             <div className="weather-expected-temps-div">
-              <img src={arrow} alt="up-arrow" id="weather-arrow-icon" className="weather-arrow-up"/>
-              <span id="weather-min">Error</span>
+              <img 
+                src={arrow} 
+                alt="up-arrow" 
+                id="weather-arrow-icon" 
+                className="weather-arrow-up"
+              />
+              <span id="weather-min">
+                Error
+              </span>
             </div>
             <div className="weather-expected-temps-div">
-              <img src={arrow} alt="down-arrow" id="weather-arrow-icon" className="weather-arrow-down"/>
-              <span id="weather-max">Error</span>
+              <img 
+                src={arrow} 
+                alt="down-arrow" 
+                id="weather-arrow-icon" 
+                className="weather-arrow-down"
+              />
+              <span id="weather-max">
+                Error
+              </span>
             </div>
           </div>
           <div className="weather-bottom-inner-div">
-            <h4>Sunrise: <span id="weather-sunrise">No info</span></h4>
-            <h4>Sunset: <span id="weather-sunset">No info</span></h4>
+            <h4>
+              Sunrise: 
+              <span id="weather-sunrise">
+                No info
+              </span>
+            </h4>
+            <h4>Sunset: 
+              <span id="weather-sunset">
+                No info
+              </span>
+            </h4>
           </div>
         </div>
       </div>

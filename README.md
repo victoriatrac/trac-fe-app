@@ -120,4 +120,5 @@ added functionality to task list for:
 
 **7/6/22**
 - edit and delete task buttons changed to text, positioned to right
-- 
+- changed look of submit/clear task buttons
+- added comments to code
